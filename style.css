@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color:#ddd;
+    color:#333;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:16px;
+}
+
+.rounded{
+    border-radius:5px;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+
+    min-width:450px;
+    max-width:750px;
+    margin:20px;
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translateY(calc(-50% - 20px));
+    transform:translateX(calc(-50% - 20px));
+}
+
+.container > .section{
+    width:100%;
+    padding:2em;
+    margin:1em auto;
+    background-color:#fff;
+}
+
+.container > .sample-1{
+    border: 10px solid red;
+    border-image:linear-gradient(45deg, red, blue);
+    border-image-slice:4;
+    border-image-repeat:repeat;
+}
+
+.container > .sample-2{
+    border: 10px double transparent;
+    background-image:linear-gradient(white, white), linear-gradient(45deg, red, blue);
+    background-origin:border-box;
+    background-clip:padding-box, border-box;
+}
+
+.container > .sample-3{
+    padding:40px 10px 10px 10px;
+    background-image:linear-gradient(45deg, red, blue);
+    border:1px solid #888;
+    border-radius:10px;
+}
+
+.container > .sample-3 > ul{
+    list-style:none;
+    list-style-position:inside;
+}
+
+.container > .sample-3 > ul > li{
+    display:inline-block;
+    padding:2px 20px 0px 20px;
+
+    background-color: #bbb;
+    border-color: #000;
+    border-width:2px 2px 0px 2px;
+    border-radius:4px 4px 0px 0px;
+    text-align: center;
+
+    cursor:pointer;
+    
+    transition-property:color, background;
+    transition-duration:.15s;
+    transition-timing-function:ease-in;
+}
+
+.container > .sample-3 > ul > li:hover{
+    background-color:#fff;
+    color:red;
+}
+
+.container > .sample-3 > ul > li:first-child{
+    background-color: #fff;
+    padding:2px 20px 0px 20px;
+    border-bottom:2px solid transparent;
+}
+
+.container > .sample-3 > ul > li.menu-button{
+    background-color: transparent;
+    color:white;
+    padding-right:5px;
+    float:right;
+}
+
+.container > .sample-3 > .inner-section{
+    padding:2em;
+    background-color:#fff;
+    border:0px 1px 1px 1px solid #ccc;
+    border-radius:0px 0px 5px 5px;
+}
+
+
+
