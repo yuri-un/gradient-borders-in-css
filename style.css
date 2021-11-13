@@ -39,12 +39,12 @@ body{
 .container > .sample-1{
     border: 10px solid red;
     border-image:linear-gradient(45deg, red, blue);
-    border-image-slice:4;
+    border-image-slice:10;
     border-image-repeat:repeat;
 }
 
 .container > .sample-2{
-    border: 10px double transparent;
+    border: 10px solid transparent;
     background-image:linear-gradient(white, white), linear-gradient(45deg, red, blue);
     background-origin:border-box;
     background-clip:padding-box, border-box;
@@ -104,5 +104,21 @@ body{
     border-radius:0px 0px 5px 5px;
 }
 
+.container > .sample-4{
+    position:relative;
+    width:calc(100% - 20px);
+    border:0px solid transparent;
+    border-radius:10px 30px 10px 30px;
+}
 
-
+.container > .sample-4:after{
+    content:"";
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    height:calc(100% + 20px);
+    width:calc(100% + 20px);
+    background:linear-gradient(45deg, red, blue) no-repeat;
+    border-radius:10px;
+    z-index:-1;
+}

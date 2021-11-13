@@ -1,19 +1,19 @@
 # Gradient Borders in CSS
  
-CSS borders in general and gradient CSS borders particularly is a powerfull tool to build fast, effective, cool graphical effect solutions. There are different methods and hooks to do this...
+CSS borders in general and gradient CSS borders particularly is a powerfull tool to build fast, effective, cool graphical effect solutions. There are different methods and hooks to do this... [Demo](https://yuri-un.github.io/gradient-borders-in-css/)
 
 ## Using Border Image
 
 * Pros: easy to implement and configure.
 
-* Cons: rounded corners aren't supported, clipped corner colors, all border sides sholud have identical parameters.
+* Cons: rounded corners aren't supported, all border sides sholud have identical parameters.
 
 HTML:
 ```html
         <div class="sample-1">
             <h2>Using Border Image</h2>
             <p><b>Pros:</b> easy to implement and configure.</p>
-            <p><b>Cons:</b> rounded corners aren't supported, clipped corner colors, all border sides should have identical parameters.</p>
+            <p><b>Cons:</b> rounded corners aren't supported, all border sides should have identical parameters.</p>
         </div>
 ```
 
@@ -30,7 +30,7 @@ CSS:
 
 ## Using Background Image
 
-* Pros: Easy to implement and configure, allows rounded corners, no clipping corner colors.
+* Pros: Easy to implement and configure, allows rounded corners.
 
 * Cons: all border sides sholud have identical parameters, inner border radius isn't allowed.
 
@@ -90,5 +90,42 @@ CSS:
     background-color:#fff;
     border:0px 1px 1px 1px solid #ccc;
     border-radius:0px 0px 5px 5px;
+}
+```
+
+## Using :after Selector
+
+* Pros: easy to implement and configure, allows inner and outer rounded corners, no clipping corner colors.
+
+* Cons: it requires a bit more complex CSS code and isn't so configurable as using the "Nested Divs" method.
+
+HTML:
+```html
+        <div class="sample-4">
+            <h2>Using :after Selector</h2>
+            <p><b>Pros:</b> easy to implement and configure, allows inner and outer rounded corners, no clipping corner colors.</p>
+            <p><b>Cons:</b> it requires a bit more complex CSS code and isn't so configurable as using the "Nested Divs" method.</p>
+        </div>
+```
+
+CSS:
+```css
+.container > .sample-4{
+    position:relative;
+    width:calc(100% - 20px);
+    border:0px solid transparent;
+    border-radius:10px 30px 10px 30px;
+}
+
+.container > .sample-4:after{
+    content:"";
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    height:calc(100% + 20px);
+    width:calc(100% + 20px);
+    background:linear-gradient(45deg, red, blue) no-repeat;
+    border-radius:10px;
+    z-index:-1;
 }
 ```

@@ -18,12 +18,12 @@
         <div class="section sample-1 rounded">
             <h2>Using Border Image</h2>
             <p><b>Pros:</b> easy to implement and configure.</p>
-            <p><b>Cons:</b> rounded corners aren't supported, clipped corner colors, all border sides should have identical parameters.</p>
+            <p><b>Cons:</b> rounded corners aren't supported, all border sides should have identical parameters.</p>
         </div>
 
         <div class="section sample-2 rounded">
             <h2>Using Background Image</h2>
-            <p><b>Pros:</b> Easy to implement and configure, allows rounded corners, no clipping corner colors.</p>
+            <p><b>Pros:</b> easy to implement and configure, allows rounded corners.</p>
             <p><b>Cons:</b> all border sides should have identical parameters, inner border radius isn't allowed.</p>
         </div>
 
@@ -40,6 +40,13 @@
                 <p><b>Cons</b>: is more complex to implement, requires at least two nested divs (more resources), it's not a direct CSS border manipulation.</p>
             </div>
         </div>
+
+        <div class="section sample-4 rounded">
+            <h2>Using :after Selector</h2>
+            <p><b>Pros:</b> easy to implement and configure, allows inner and outer rounded corners, no clipping corner colors.</p>
+            <p><b>Cons:</b> it requires a bit more complex CSS code and isn't so configurable as using the "Nested Divs" method.</p>
+        </div>
+
     </div>
 </body>
 </html>
